@@ -3,7 +3,7 @@
     <div class="row mb-3">
         <label for="name" class="col-sm-2 col-form-label">Name</label>
         <div class="col-sm-10">
-            <input type="text" name="name" id="name" class="form-control" id="name">
+            <input type="text" name="name" id="name" class="form-control {{($errors->first('name'))?'is-invalid':''}}" id="name" value="{{old('name')}}">
             <div class="errors text-danger">
                 @error('name')
                 {{$message}}
@@ -14,7 +14,7 @@
     <div class="row mb-3">
         <label for="email" class="col-sm-2 col-form-label">Email</label>
         <div class="col-sm-10">
-            <input type="email" class="form-control" id="email" name="email">
+            <input type="email" class="form-control" id="email" name="email" value="{{old('email')}}">
             <div class="errors text-danger">
                 @error('email')
                 {{$message}}
@@ -43,7 +43,7 @@
     <div class="row mb-3">
         <label for="message" class="col-sm-2 col-form-label">Message</label>
         <div class="col-sm-10">
-            <textarea name="message" id="" cols="30" rows="10" class="form-control" id="message"></textarea>
+            <textarea name="message" id="" cols="30" rows="10" class="form-control" id="message" value="{{old('message')}}"></textarea>
             <div class="errors text-danger">
                 @error('message')
                 {{$message}}

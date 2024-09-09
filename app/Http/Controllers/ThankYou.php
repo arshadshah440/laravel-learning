@@ -15,6 +15,10 @@ class ThankYou extends Controller
             'email'=>'required | email',
             'gridRadios'=>'required',
             'message'=>'required',
+        ],[
+            'name.required'=>'Name can not be empty',
+            'email.required'=>'Name can not be empty',
+            'email.email'=>'Email is not valid',
         ]);
 
         echo  $request->name;
